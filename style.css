@@ -63,7 +63,7 @@ header {
   color: white;
 }
 
-.saveBtn {
+.SaveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -71,7 +71,7 @@ header {
   color: white;
 }
 
-.saveBtn i:hover {
+.SaveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }

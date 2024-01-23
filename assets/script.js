@@ -7,50 +7,43 @@ document.getElementById("currentDay").innerHTML = date.toLocaleDateString(
 );
 
 // colour codes each timeblock
-date.getHours(); // this should get the hour from the date variable
 $(".time-block").each(function () {
-  // need help with this - ask tutor
-
-  // What Data do we need here (?)
-  // DateTime --> DayJS Library | Date Object --> Users Current Time
   // let currentHour = date.getHours();
   let currentHour = 13; // hard coded testing val
   console.log("Current Hour: ", currentHour);
   console.log("Current Element ID: ", $(this).attr("id"));
-  // console.log("Current Element: ", $(this));
-  // Time Blocks --> How do we GRAB reference to these elements/values (?)
-  let elementHour = $(this).attr("id");
-  // What is our Condition (?)
-  if (elementHour == currentHour) {
-    // what happens here(?)
 
-    // $(this).removeClass("past")
-    // --> what are the expected outcomes (?)  --> UPDATEDING the CSS (output view)
+  let elementHour = $(this).attr("id");
+
+  if (elementHour == currentHour) {
     $(this).addClass("present");
   } else if (elementHour < currentHour) {
     $(this).addClass("past");
   } else {
     $(this).addClass("future");
   }
-  // --> Local Storage
 });
 
-// saves event to local storage (event being the text the user inputs into the description typearea)
-let tasks = [];
-let userInput = document.querySelector(".description");
-
-function saveTasks() {}
-
-// WHAT triggers our operation
-
+// saves user's input to local storage
 $(".SaveBtn").on("click", function (event) {
-  console.log($(this));
-  console.log($(this).parent());
-  console.log($(this).siblings());
-  console.log($(this).siblings()[1]);
+  console.log("Clicked");
   console.log($(this).siblings(".description"));
+
+  // get nearby values
+  var value = $(this).siblings(".description").val();
+  var time = $(this).parent().attr("id");
+
+  // save in localStorage
+  localStorage.setItem(time, value);
 });
 
-// WHAT do we capture
-// we need to capture user input --> input with class description | DATA
-// we save this data to localStorage
+// keeps the description when page is refreshed
+$("#9 .description").val(localStorage.getItem("9"));
+$("#10 .description").val(localStorage.getItem("10"));
+$("#11 .description").val(localStorage.getItem("11"));
+$("#12 .description").val(localStorage.getItem("12"));
+$("#13 .description").val(localStorage.getItem("13"));
+$("#14 .description").val(localStorage.getItem("14"));
+$("#15 .description").val(localStorage.getItem("15"));
+$("#16 .description").val(localStorage.getItem("16"));
+$("#17 .description").val(localStorage.getItem("17"));
