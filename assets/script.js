@@ -8,8 +8,7 @@ document.getElementById("currentDay").innerHTML = date.toLocaleDateString(
 
 // colour codes each timeblock
 $(".time-block").each(function () {
-  // let currentHour = date.getHours();
-  let currentHour = 13; // hard coded testing val
+  let currentHour = date.getHours();
   console.log("Current Hour: ", currentHour);
   console.log("Current Element ID: ", $(this).attr("id"));
 
